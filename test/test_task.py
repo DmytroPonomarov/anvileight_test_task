@@ -8,9 +8,9 @@ def page_loaded_successfully_test(chrome_browser):
     chrome_browser.maximize_window()
 
     WebDriverWait(chrome_browser, 60).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, '.commit-tease-sha.mr-1'))
+        EC.presence_of_element_located((By.CSS_SELECTOR, '.commit-tease-sha'))
     )
-    commit_id = len(chrome_browser.find_elements_by_css_selector('.commit-tease-sha.mr-1'))
+    commit_id = len(chrome_browser.find_elements_by_css_selector('.commit-tease-sha'))
 
     assert commit_id == 1
 
